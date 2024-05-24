@@ -7,6 +7,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100%;
+    position: relative;
     font-family: "Courier New", monospace;
     /* background-color: #0F0E10; */
     background-size: cover;
