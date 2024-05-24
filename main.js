@@ -78,6 +78,7 @@ const handleMove = (event) => {
         const deltaY = clientY - lastMouseY;
         rotateX -= deltaY * 0.25; // Adjust the sensitivity as needed
         rotateY += deltaX * 0.25; // Adjust the sensitivity as needed
+        cube.style.transition = 'transform 0.1s ease-out'; // Add a short transition for smoothness
         cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         lastMouseX = clientX;
         lastMouseY = clientY;
@@ -120,6 +121,7 @@ function face() {
             break;
     }
 }
+
 const snapToFace = () => {
     rotateX = Math.round(rotateX / 90) * 90;
     rotateY = Math.round(rotateY / 90) * 90;
@@ -131,11 +133,6 @@ const snapToFace = () => {
     face();
 
     if (rotateX != oldRotX || rotateY != oldRotY) {
-        // if (rotateX != 0 || rotateY != 0) {
-        //     playCenter();
-        // } else {
-        //     playSide();
-        // }
         if(flip){
             playSide();
             flip = !flip;
@@ -149,6 +146,7 @@ const snapToFace = () => {
     oldRotX = rotateX;
     oldRotY = rotateY;
 
+    cube.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'; // Add bounce effect
     cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     topFaceText.style.transform = `rotateZ(${rotateY}deg)`;
     bottomrot = -rotateY;
