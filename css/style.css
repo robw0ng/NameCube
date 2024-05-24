@@ -134,7 +134,9 @@ header{
     justify-content: center;
     /* user-select: none; */
     opacity: 1;
-    transition: transform 0.3s ease, opacity 0.6s ease;
+    /* transition: transform 0.3s ease, opacity 0.6s ease; */
+    transition: opacity 0.6s ease;
+
 }
 
 .cube-container .cube-face .cube-text .text{
