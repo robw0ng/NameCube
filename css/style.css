@@ -84,9 +84,7 @@ header{
     background-image: url('/images/psgbig.png');
     background-size: cover;
     background-position: center;
-    /* background-color: #663FBC; */
-    /* background-repeat: no-repeat; Prevent the image from repeating */
-    opacity: .6;
+    background-color: rgba(0, 0, 0, 0.6); /* If you want a semi-transparent black background */
     box-shadow: inset 0 0 25px #2e102e;
 }
 
@@ -95,11 +93,8 @@ header{
 .cube-container .cube > .back { transform: rotateY(180deg) translateZ(var(--translateZ)); }
 .cube-container .cube > .left { transform: rotateY(-90deg) translateZ(var(--translateZ)); }
 .cube-container .cube > .right { transform: rotateY(90deg) translateZ(var(--translateZ)); }
-.cube-container .cube > .top { transform: rotateX(90deg) translateZ(var(--translateZ));
-transform-origin: center;
-}
-.cube-container .cube > .bottom { transform: rotateX(-90deg) translateZ(var(--translateZ));
-transform-origin: center; }
+.cube-container .cube > .top { transform: rotateX(90deg) translateZ(var(--translateZ)); }
+.cube-container .cube > .bottom { transform: rotateX(-90deg) translateZ(var(--translateZ)); }
 
 .cube-container .cube-face .cube-text{
     width: var(--cube-width);
@@ -109,8 +104,8 @@ transform-origin: center; }
     align-items: center;
     justify-content: center;
     user-select: none;
+    opacity: 1;
     transition: transform 0.3s ease, opacity 0.6s ease;
-
 }
 
 .cube-container .cube-face .cube-text .text{
@@ -121,7 +116,6 @@ transform-origin: center; }
     color: #eee;
     font-weight: bold;
     opacity: 1;
-    transition: opacity 0.6s ease;
 }
 
 .cube-text .top{

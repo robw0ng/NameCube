@@ -19,31 +19,6 @@ toggleSoundButton.addEventListener('click', () => {
     toggleSoundButton.textContent = soundEnabled ? '🔇' : '🔊';
 });
 
-function setFaceVisible(face) {
-    topFaceText.style.opacity = 0;
-    bottomFaceText.style.opacity = 0;
-    frontFaceText.style.opacity = 0;
-    rightFaceText.style.opacity = 0;
-    leftFaceText.style.opacity = 0;
-    switch (face) {
-        case "FRONT":
-            frontFaceText.style.opacity = 1;
-            break;
-        case "TOP":
-            topFaceText.style.opacity = 1;
-            break;
-        case "BOTTOM":
-            bottomFaceText.style.opacity = 1;
-            break;
-        case "LEFT":
-            leftFaceText.style.opacity = 1;
-            break;
-        case "RIGHT":
-            rightFaceText.style.opacity = 1;
-            break;
-    }
-}
-
 let rotateX = 0;
 let rotateY = 0;
 let oldRotX = 0;
@@ -54,7 +29,7 @@ let lastMouseY = 0;
 
 let currentAudio = null;
 let flip = 0;
-var currentFaceText = "FRONT";
+var currentFace = "front";
 
 function playCenter() {
     if (!soundEnabled) return;
@@ -114,30 +89,37 @@ const handleEnd = () => {
     snapToFace();
 };
 
-function getCurrentFace() {
-    let atFace = null;
+function face() {
+    topFaceText.style.opacity = 0;
+    bottomFaceText.style.opacity = 0;
+    frontFaceText.style.opacity = 0;
+    rightFaceText.style.opacity = 0;
+    leftFaceText.style.opacity = 0;
     switch (rotateY) {
         case -90:
-            atFace = "RIGHT";
+            currentFace = "right";
+            rightFaceText.style.opacity = 1;
             break;
         case 0:
-            atFace = "FRONT";
+            currentFace = "front";
+            frontFaceText.style.opacity = 1;
             break;
         case 90:
-            atFace = "LEFT";
+            currentFace = "left";
+            leftFaceText.style.opacity = 1;
             break;
     }
     switch (rotateX) {
         case -90:
-            atFace = "TOP";
+            currentFace = "top";
+            topFaceText.style.opacity = 1;
             break;
         case 90:
-            atFace = "BOTTOM";
+            currentFace = "bottom";
+            bottomFaceText.style.opacity = 1;
             break;
     }
-    return atFace;
 }
-
 const snapToFace = () => {
     rotateX = Math.round(rotateX / 90) * 90;
     rotateY = Math.round(rotateY / 90) * 90;
@@ -146,8 +128,7 @@ const snapToFace = () => {
     rotateY = rotateY > 90 ? 90 : rotateY; // prevents left going to back
     rotateY = rotateY < -90 ? -90 : rotateY; // prevents right going to back
 
-    currentFaceText = getCurrentFace();
-    setFaceVisible(currentFaceText);
+    face();
 
     if (rotateX != oldRotX || rotateY != oldRotY) {
         // if (rotateX != 0 || rotateY != 0) {
@@ -155,7 +136,6 @@ const snapToFace = () => {
         // } else {
         //     playSide();
         // }
-
         if(flip){
             playSide();
             flip = !flip;
@@ -166,12 +146,11 @@ const snapToFace = () => {
         }
     }
 
-
     oldRotX = rotateX;
     oldRotY = rotateY;
 
     cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    topFaceText.style.transform = `rotateZ(${rotateY}deg)`; // translateZ(var(--translateZ))
+    topFaceText.style.transform = `rotateZ(${rotateY}deg)`;
     bottomrot = -rotateY;
     bottomFaceText.style.transform = `rotateZ(${bottomrot}deg)`;
 };
