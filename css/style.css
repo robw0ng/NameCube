@@ -7,7 +7,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "Poppins",sans-serif;
+    font-family: "Courier New", monospace;
     background-color: #0F0E10;
     box-shadow: inset 0 0 100px #000;
     overflow: hidden;
@@ -18,7 +18,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: #212121;
-    font-family: "Poppins",sans-serif;
+    font-family: "Courier New", monospace;
     font-weight: bold;
     color: #bbbbbb;
     padding: 10px 10px;
@@ -37,7 +37,7 @@ body{
 
 #toggleSound {
     background-color: #444;
-    color: #eee;
+    color: #bbbbbb;
     border: none;
     cursor: pointer;
     padding: 10px 10px;
@@ -113,9 +113,18 @@ header{
     width: 100%;
     text-align: center;
     font-size: 18px;
-    color: #eee;
+    color: #b9b7ac;
     font-weight: bold;
     opacity: 1;
+}
+
+.cube-container .cube-face .cube-text .text a {
+    color: #c89a2d;
+    text-decoration: none;
+}
+
+.cube-container .cube-face .cube-text .text a:hover {
+    text-decoration: underline;
 }
 
 .cube-text .top{
