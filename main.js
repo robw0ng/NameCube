@@ -194,3 +194,13 @@ window.addEventListener("mouseup", handleEnd);
 window.addEventListener("touchstart", handleStart);
 window.addEventListener("touchmove", handleMove);
 window.addEventListener("touchend", handleEnd);
+
+// Prevent default touch events to disable scrolling on mobile
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+// Prevent default wheel events to disable scrolling on desktop
+document.addEventListener('wheel', function(event) {
+    event.preventDefault();
+}, { passive: false });
