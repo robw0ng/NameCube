@@ -13,6 +13,23 @@ body{
     overflow: hidden;
 }
 
+.coords {
+    display: flex;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: #bbbbbb;
+    padding: 10px 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+}
+.coords .current{
+    margin-right: 20px;
+}
+
+
 .top-bar {
     display: flex;
     justify-content: space-between;
@@ -137,10 +154,10 @@ header{
 
 .cube-text .left{
     left: 0;
-    transform: translateX(-136px) rotate(-90deg);
+    transform: translateX(-140px) rotate(-90deg);
 }
 
 .cube-text .right{
     right: 0;
-    transform: translateX(136px) rotate(90deg);
+    transform: translateX(140px) rotate(90deg);
 }

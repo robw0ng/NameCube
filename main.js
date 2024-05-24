@@ -1,5 +1,9 @@
 const cube = document.querySelector(".cube");
 
+const currCoords = document.querySelector(".coords .current");
+const prevCoords = document.querySelector(".coords .previous");
+
+
 const topFaceText = document.querySelector(".cube-text.top");
 const bottomFaceText = document.querySelector(".cube-text.bottom");
 const leftFaceText = document.querySelector(".cube-text.left");
@@ -130,6 +134,10 @@ const snapToFace = () => {
     rotateY = rotateY > 90 ? 90 : rotateY; // prevents left going to back
     rotateY = rotateY < -90 ? -90 : rotateY; // prevents right going to back
 
+    if(rotateX == 90 || rotateX == -90){
+        rotateY = 0;
+    }
+
     face();
 
     if (rotateX != oldRotX || rotateY != oldRotY) {
@@ -142,6 +150,10 @@ const snapToFace = () => {
             flip = !flip;
         }
     }
+
+    currCoords.innerHTML = `Current:<br> X: ${rotateX}<br> Y: ${rotateY}<br>`;
+    prevCoords.innerHTML = `Previous:<br> X: ${oldRotX}<br> Y: ${oldRotY}<br>`;
+
 
     oldRotX = rotateX;
     oldRotY = rotateY;
