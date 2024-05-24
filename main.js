@@ -3,7 +3,6 @@ const cube = document.querySelector(".cube");
 const currCoords = document.querySelector(".coords .current");
 const prevCoords = document.querySelector(".coords .previous");
 
-
 const topFaceText = document.querySelector(".cube-text.top");
 const bottomFaceText = document.querySelector(".cube-text.bottom");
 const leftFaceText = document.querySelector(".cube-text.left");
@@ -21,6 +20,7 @@ const toggleSoundButton = document.getElementById('toggleSound');
 toggleSoundButton.addEventListener('click', () => {
     soundEnabled = !soundEnabled;
     toggleSoundButton.textContent = soundEnabled ? '🔇' : '🔊';
+    playOption();
 });
 
 let rotateX = 0;
@@ -34,6 +34,17 @@ let lastMouseY = 0;
 let currentAudio = null;
 let flip = 0;
 var currentFace = "front";
+
+function playOption(){
+    if (!soundEnabled) return;
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    currentAudio = new Audio('audio/Option Select.wav');
+    currentAudio.volume = .1;
+    currentAudio.play();
+}
 
 function playCenter() {
     if (!soundEnabled) return;
@@ -56,6 +67,13 @@ function playSide() {
     currentAudio.volume = .1;
     currentAudio.play();
 };
+
+function playSelect() {
+    if (!soundEnabled) return;
+    currentAudio = new Audio('audio/Menu Select.wav');
+    currentAudio.volume = .1;
+    currentAudio.play();
+}
 
 const handleStart = (event) => {
     isDragging = true;
@@ -154,7 +172,6 @@ const snapToFace = () => {
     currCoords.innerHTML = `Current:<br> X: ${rotateX}<br> Y: ${rotateY}<br>`;
     prevCoords.innerHTML = `Previous:<br> X: ${oldRotX}<br> Y: ${oldRotY}<br>`;
 
-
     oldRotX = rotateX;
     oldRotY = rotateY;
 
@@ -164,6 +181,11 @@ const snapToFace = () => {
     bottomrot = -rotateY;
     bottomFaceText.style.transform = `rotateZ(${bottomrot}deg)`;
 };
+
+// Add event listeners to play click sound
+document.querySelectorAll('.cube-text a').forEach(link => {
+    link.addEventListener('click', playSelect);
+});
 
 window.addEventListener("mousedown", handleStart);
 window.addEventListener("mousemove", handleMove);
