@@ -20,7 +20,7 @@ const toggleSoundButton = document.getElementById('toggleSound');
 toggleSoundButton.addEventListener('click', () => {
     soundEnabled = !soundEnabled;
     toggleSoundButton.textContent = soundEnabled ? '🔇' : '🔊';
-    playOption();
+    playAudio('audio/Option Select.wav');
 });
 
 let rotateX = 0;
@@ -35,37 +35,15 @@ let currentAudio = null;
 let flip = 0;
 var currentFace = "front";
 
-function playOption(){
+function playAudio(path){
     if (!soundEnabled) return;
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
     }
-    currentAudio = new Audio('audio/Option Select.wav');
+    currentAudio = new Audio(path);
     currentAudio.volume = .1;
-    currentAudio.play();
-}
-
-function playCenter() {
-    if (!soundEnabled) return;
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    }
-    currentAudio = new Audio('audio/Menu Turn Center.wav');
-    currentAudio.volume = .1;
-    currentAudio.play();
-};
-
-function playSide() {
-    if (!soundEnabled) return;
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-    }
-    currentAudio = new Audio('audio/Menu Turn Side.wav');
-    currentAudio.volume = .1;
-    currentAudio.play();
+    currentAudio.play(); 
 };
 
 function playSelect() {
@@ -73,7 +51,7 @@ function playSelect() {
     currentAudio = new Audio('audio/Menu Select.wav');
     currentAudio.volume = .1;
     currentAudio.play();
-}
+};
 
 const handleStart = (event) => {
     isDragging = true;
@@ -112,33 +90,41 @@ const handleEnd = () => {
     snapToFace();
 };
 
-function face() {
+function hideFaces(){
     topFaceText.style.opacity = 0;
     bottomFaceText.style.opacity = 0;
     frontFaceText.style.opacity = 0;
     rightFaceText.style.opacity = 0;
     leftFaceText.style.opacity = 0;
+};
+
+function activeFace() {
     switch (rotateY) {
         case -90:
             currentFace = "right";
+            hideFaces();
             rightFaceText.style.opacity = 1;
             break;
         case 0:
             currentFace = "front";
+            hideFaces();
             frontFaceText.style.opacity = 1;
             break;
         case 90:
             currentFace = "left";
+            hideFaces();
             leftFaceText.style.opacity = 1;
             break;
     }
     switch (rotateX) {
         case -90:
             currentFace = "top";
+            hideFaces();
             topFaceText.style.opacity = 1;
             break;
         case 90:
             currentFace = "bottom";
+            hideFaces();
             bottomFaceText.style.opacity = 1;
             break;
     }
@@ -156,17 +142,16 @@ const snapToFace = () => {
         rotateY = 0;
     }
 
-    face();
+    activeFace();
 
     if (rotateX != oldRotX || rotateY != oldRotY) {
         if(flip){
-            playSide();
-            flip = !flip;
+            playAudio('audio/Menu Turn Side.wav');
         }
         else{
-            playCenter();
-            flip = !flip;
+            playAudio('audio/Menu Turn Center.wav')
         }
+        flip = !flip;
     }
 
     currCoords.innerHTML = `Current:<br> X: ${rotateX}<br> Y: ${rotateY}<br>`;
