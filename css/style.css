@@ -4,7 +4,7 @@
 }
 
 html, body {
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -16,10 +16,10 @@ body{
     height: 100%;
     position: relative;
     font-family: "Courier New", monospace;
-    /* background-color: #0F0E10; */
+    background-color: #0F0E10;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(15, 14, 16, .95), rgba(15, 14, 16, .95)), url("../images/end.jpg");
+    /* background-repeat: no-repeat; */
+    background-image: linear-gradient(rgba(15, 14, 16, .85), rgba(15, 14, 16, .85)), url("../images/end.jpg");
     box-shadow: inset 0 0 100px #000;
     overflow: hidden;
     user-select: none;
@@ -73,6 +73,16 @@ body{
     margin-right: 20px;
 }
 
+/* #menu-icon{
+    background-color: #212121;
+    color: #bbbbbb;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    font-size: 23px;
+    margin-left: 10px;
+} */
+
 #toggleSound:hover {
     background-color: #555;
 }
@@ -113,7 +123,7 @@ header{
     background-image: url('../images/psgbig.png');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.6); /* If you want a semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.6); /*If you want a semi-transparent black background*/
     box-shadow: inset 0 0 25px #2e102e;
 }
 
@@ -174,4 +184,25 @@ header{
 .cube-text .right{
     right: 0;
     transform: translateX(140px) rotate(90deg);
+}
+
+.Experiences {
+    padding: 20px;
+    background-color: #212121; /* Light grey background */
+    color: #ffffff; /* Dark text color */
+}
+
+.scroll-message{
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(33, 33, 33, .9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
 }

@@ -189,3 +189,10 @@ document.addEventListener('touchmove', function(event) {
 document.addEventListener('wheel', function(event) {
     event.preventDefault();
 }, { passive: false });
+
+window.addEventListener('scroll', function() {
+    var scrollIndicator = document.getElementById('scroll-message');
+    if (window.scrollY > 0) {
+        scrollIndicator.style.display = 'none';
+    }
+});
