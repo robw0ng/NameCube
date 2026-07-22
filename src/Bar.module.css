@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'GAMECUBEN';
+    src: url('GameCube.eot');
+    src: url('GameCube.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/GameCube.ttf')  format('truetype'),
+         url('GameCube.svg#GAMECUBEN') format('svg');
+}
+
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    background-color: #212121;
+    background: linear-gradient(to bottom, #212121, #111111);
+    font-family: "Courier New", monospace;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: 'GAMECUBEN';
+    font-weight: bold;
+    color: #bbbbbb;
+}
+
+.header-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.header-buttons a{
+    color: #bbbbbb; 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.active{
+    background-color: #555;
+}
+
+.header-buttons a:hover{
+    background: linear-gradient(to bottom, #7a3eb1, #341a4a);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#toggleSound {
+    position: absolute;
+    right: 20px;
+    background-color: #444;
+    color: #bbbbbb;
+    border: none;
+    cursor: pointer;
+    padding: 10px 10px;
+}
+
+#toggleSound:hover {
+    background-color: #555;
+}
+
+.terraria-home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 75px;
+    height: 24px;
+}
+
+.terraria-home-button:hover{
+    background-color: #5f7df7 !important;
+}
+  
+.frame {
+    object-fit: contain;
+}
+
+.frame:hover {
+    animation: bobbing 1s infinite alternate;
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-2px);
+    }
+}

@@ -1,6 +1,6 @@
 :root{
-    --cube-width: 300px;
-    --translateZ: 150px;
+    --cube-width: 400px;
+    --translateZ: calc(var(--cube-width) / 2);
 }
 
 html, body {
@@ -110,8 +110,8 @@ header{
 }
 
 .cube-container .cube {
-    width: 300px;
-    height: 300px;
+    width: var(--cube-width);
+    height: var(--cube-width);
     transform-style: preserve-3d;
     transition: transform 0.3s ease;
 }
@@ -169,27 +169,29 @@ header{
 }
 
 .cube-text .top{
+    /* font-family: "GAMECUBEN"; */
     top: 0;
+    height: 22px;
 }
 
 .cube-text .bottom{
+    /* font-family: "GAMECUBEN"; */
     bottom: 0;
+    height: 22px;
 }
 
 .cube-text .left{
+    /* font-family: "GAMECUBEN"; */
     left: 0;
-    transform: translateX(-140px) rotate(-90deg);
+    height: 22px;
+    transform: translateX(calc((var(--cube-width) / -2) + 10px)) rotate(-90deg);
 }
 
 .cube-text .right{
+    /* font-family: "GAMECUBEN"; */
     right: 0;
-    transform: translateX(140px) rotate(90deg);
-}
-
-.Experiences {
-    padding: 20px;
-    background-color: #212121; /* Light grey background */
-    color: #ffffff; /* Dark text color */
+    height: 22px;
+    transform: translateX(calc((var(--cube-width) / 2) - 10px)) rotate(90deg);
 }
 
 .scroll-message{
