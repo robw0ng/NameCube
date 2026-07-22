@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# robw0ng.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal site. React + TypeScript on Vite, deployed to GitHub Pages.
 
-Currently, two official plugins are available:
+The front page is a draggable cube holding the personal stuff (hobbies, games, tech
+stack, collecting), with the work below it: bio, projects, resume. The cube is
+hand-rolled 3D, no library. Orientation is tracked as a rotation matrix and each drag
+is applied in screen space, so every face drags the same way rather than gimballing
+once you're 90 degrees over. On release it snaps to whichever face points most at the
+viewer; the back has no content so it isn't a snap target.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running it
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # -> dist/
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Deploying
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and publishes
+`dist/` to Pages. `public/CNAME` carries the custom domain into the artifact.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## legacy/
+
+The original NameCube, a GameCube BIOS recreation in plain HTML, CSS, and JavaScript.
+It held this domain until the current site replaced it, and the deploy copies it into
+`dist/legacy` so it stays reachable at [robw0ng.com/legacy](https://robw0ng.com/legacy/).
+Frozen, not maintained.
