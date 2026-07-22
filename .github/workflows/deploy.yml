@@ -20,9 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          # legacy/ still serves the original NameCube, and its resume lives in a submodule
-          submodules: recursive
 
       - uses: actions/setup-node@v4
         with:

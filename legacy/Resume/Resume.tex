@@ -1,0 +1,236 @@
+  \documentclass[letterpaper,11pt]{article}
+
+  \usepackage{latexsym}
+  \usepackage[empty]{fullpage}
+  \usepackage{titlesec}
+  \usepackage{marvosym}
+  \usepackage[usenames,dvipsnames]{color}
+  \usepackage{verbatim}
+  \usepackage{enumitem}
+  \usepackage[hidelinks]{hyperref}
+  \usepackage{fancyhdr}
+  \usepackage[english]{babel}
+  \usepackage{tabularx}
+  \input{glyphtounicode}
+  \usepackage{multicol}
+
+  \pagestyle{fancy}
+  \fancyhf{} % clear all header and footer fields
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+
+  % Adjust margins
+  \addtolength{\oddsidemargin}{-0.5in}
+  \addtolength{\evensidemargin}{-0.5in}
+  \addtolength{\textwidth}{1in}
+  \addtolength{\topmargin}{-.5in}
+  \addtolength{\textheight}{1.0in}
+
+  \urlstyle{same}
+
+  \raggedbottom
+  \raggedright
+  \setlength{\tabcolsep}{0in}
+
+  % Sections formatting
+  \titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+  }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+  % Ensure that generate pdf is machine readable/ATS parsable
+  \pdfgentounicode=1
+
+  %-------------------------
+  % Custom commands
+  \newcommand{\resumeItem}[1]{
+    \item\small{
+      {#1 \vspace{-2pt}}
+    }
+  }
+
+  \newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeSubSubheading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeProjectHeading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \small#1 & #2 \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+  \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+  \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeItemListStart}{\begin{itemize}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+  %-------------------------------------------
+  %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge \scshape Robert C. Wong} \\ \vspace{1pt}
+  \small 917-993-4624 $|$ \href{mailto:robwon15@gmail.com}{\underline{robwong15@gmail.com}} $|$
+  \href{https://linkedin.com/in/robertcwong}{\underline{linkedin.com/in/robertcwong}} $|$
+  \href{https://github.com/robw0ng/}{\underline{github.com/robw0ng}}
+  \\
+  \href{https://robw0ng.com/}{\underline{robw0ng.com}}
+
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Stony Brook University}{Stony Brook, NY}
+{Bachelor of Science in Computer Science}{Aug. 2022 - Dec. 2025}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=10pt, topsep=5pt, parsep=0pt, partopsep=0pt]
+  \item \small{\textbf{Relevant Coursework:} \textit{Software Development, Software Security, System Fundamentals 1 \& 2, Data Structures \& Algorithms, Analysis of Algorithms, Programming Abstractions, Discrete Mathematics, Linear Algebra}}
+\end{itemize}
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Python, Java, JavaScript, SQL (SQLite \& MySQL), C, HTML/CSS, Rust (Basic), OCaml} \\
+        \textbf{Frameworks}{: Flask, React, Express, Node.js, Bootstrap} \\
+        \textbf{Libraries}{: pandas, NumPy, python-pptx, jQuery, DataTables} \\
+        % \textbf{Operating Systems}{: Windows, Linux, MacOS} \\
+        \textbf{Developer Tools}{: Git, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
+        }}
+\end{itemize}
+\vspace{-12pt}
+
+
+%-------------------------------------------
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{TD3 Innovative Gaming}{Sept. 2024 - Present}
+{Instructor}{Various Locations}
+\resumeItemListStart
+\resumeItem{Instructed students in basic computing skills and introductory coding concepts through engaging educational experiences on multiple video game platforms, fostering a collaborative and interactive learning environment.}
+\resumeItem{Managed and maintained game servers to facilitate both structured educational sessions and recreational activities, ensuring a safe and stable environment for students to learn and explore.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Outlier AI}{Jun. 2024 - Present}
+{AI Trainer}{Remote}
+\resumeItemListStart
+\resumeItem{Analyzed the output and backend of an AI model according to given prompts, reviewing the steps the model took, which included Python and SQL processes.}
+
+% \resumeItem{Assessed which output was best and provided a detailed justification regarding it.}
+
+\resumeItem{Contributed to the AI model's improvement by providing comprehensive feedback and justifications, enhancing its ability to generate accurate and relevant responses for future prompts.}
+
+% \resumeItem{Maintained detailed records of evaluations and justifications to track progress and identify areas for further enhancement.}
+\resumeItemListEnd
+
+\resumeSubheading
+{NYPD Compliance Division}{Jul. 2024 - Aug. 2024}
+{Software Development Intern}{Manhattan, New York}
+\resumeItemListStart
+\resumeItem{Tackled issues concerning big data processing, user submission forms and database management, bettering the quality of life for staff working on their own tasks.}
+\resumeItem{Developed user-friendly applications to transform complex and inaccessible systems into easily navigable tools for staff with limited computer experience, ensuring accessibility and ease of use for all users.}
+\resumeItem{Singlehandedly improved departmental efficiency by \textbf{86.35\%} through the development of custom software.}
+\resumeItem{Created and implemented programs that are now in constant use by numerous team members, streamlining their daily responsibilities and significantly enhancing operational effectiveness across the department.}
+\resumeItemListEnd
+
+%           \resumeSubheading
+%       {Indie Game Developer}{Jan 2016 - April 2020}
+%       {Roblox}{Remote}
+%       \resumeItemListStart
+%         \resumeItem{Started and led Octagon Productions, a team of developers dedicated to creating various games to be sold or played by users on the platform.}
+
+% \resumeItem{Utilized Lua and Roblox's 3D modeling tools to create assets and scripts for the various builds for our projects.}
+%         \resumeItem{Created Precision, a first-person shooter. Amassing about 40 thousand unique visits with a small community of players that enjoyed the game.}
+
+%         \resumeItem{Commissioned and sold builds to others for their own use. Creating games and specific builds for certain groups on the platform.}
+%       \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{RECAP - Data Entry} $|$ \emph{Python, Flask, SQLite, JavaScript, HTML/CSS}}{Aug. 2024 -- Sept. 2024}
+\resumeItemListStart
+\resumeItem{Developed an internal application for the NYPD's Body-Worn Camera unit to streamline the documentation and management of video evidence related to force incidents.}
+\resumeItem{Reduced form submission time by \textbf{58\%}, significantly improving efficiency and productivity.}
+\resumeItem{Designed a user-friendly front-end interface using HTML, CSS, and the Bootstrap framework, enabling seamless form submissions and data retrieval by coworkers.}
+\resumeItem{Developed a Flask-based backend with Python and SQLite for efficient data management, using JavaScript and AJAX to dynamically display database records on the website for management to view.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{ComplianceGenie - Data Processing} $|$ \emph{Python, pandas, python-pptx, CustomTkinter}}{Jun. 2024 -- Aug. 2024}
+\resumeItemListStart
+\resumeItem{A Python-based application for the NYPD to automate the generation of reports and presentations,
+  improving efficiency by \textbf{98.5\%}, replacing manual computations and data entry.}
+\resumeItem{Utilized pandas for data processing to read, clean, and compile incident, interaction, and arrest data.}
+\resumeItem{Designed an intuitive front-end using CustomTkinter, prioritizing ease of use and utility for non-technical staff.}
+\resumeItem{Generated both citywide and borough-specific statistics. Outputting results in comprehensive Excel reports using openpyxl and PowerPoint presentations using python-pptx.}
+
+\resumeItemListEnd
+% \resumeProjectHeading
+% {\textbf{Legion - Daemon Manager} $|$ \emph{C, Unix System Calls, Signal Handling, Process Control}}{Mar. 2024 -- Apr. 2024}
+% \resumeItemListStart
+% % \resumeItem{Developed an application focusing on process handling and inter-process communication in a Unix environment}
+% % \resumeItem{Involved creating, and managing daemons, implementing functions such as starting, stopping, and logging daemon activities efficiently.}
+% % \resumeItem{Employed inter-process communication techniques such as pipes and signal handlers to synchronize and control daemon processes securely and effectively.}
+% % \resumeItem{Implemented error handling and signal safety mechanisms to ensure system stability and reliability during daemon runtime operations.}
+% \resumeItem{Developed a Unix application for process handling and inter-process communication. }
+% \resumeItem{Created and managed daemons with functions for starting, stopping, and logging activities.}
+% \resumeItem{Employed pipes and signal handlers for secure and effective synchronization and control.}
+% \resumeItem{Ensured system stability with robust error handling and signal safety mechanisms.}
+% \resumeItemListEnd
+
+
+
+% \resumeProjectHeading
+%     {\textbf{Charla - Chat Server} $|$ \emph{C, POSIX Threads, Sockets, CSAPP Library}}{April 2024 -- May 2024}
+%     \resumeItemListStart
+%       % \resumeItem{Developed a multi-threaded chat server in C that handles multiple client connections simultaneously, demonstrating proficiency in network programming and concurrent computing.}
+%       % \resumeItem{Utilized POSIX sockets to manage client connections, enabling real-time messaging between users.}
+%       % \resumeItem{Implemented thread-safe operations using mutexes and semaphores to manage access to shared resources among multiple threads, ensuring data integrity and preventing race conditions.}
+%       % \resumeItem{Designed and implemented user and client registries with functionalities to register, unregister, and query clients and users, supporting dynamic user sessions.}
+%       \resumeItem{Developed a multi-threaded chat server in C for handling multiple client connections. }
+%       \resumeItem{Utilized POSIX sockets for real-time messaging between users. }
+%       \resumeItem{Ensured thread-safe operations with mutexes and semaphores to manage shared resources. }
+%       \resumeItem{Designed registries for dynamic user sessions with functionalities for registration and querying. }
+%     \resumeItemListEnd
+
+% \resumeProjectHeading
+%           {\textbf{Chip-8} $|$ \emph{Rust, SDL, Graphics and Input Handling }}{June 2024 -- July 2024}
+%           \resumeItemListStart
+%             \resumeItem{Developed a fully functional Chip-8 emulator capable of running classic Chip-8 games and programs.}
+%             \resumeItem{Emulated key components including RAM, program counter, a variable register, instruction register, stack pointer, stack, keypad for input, delay timer, and sound timer.}
+%             \resumeItem{Implemented the emulator using Rust and utilized SDL for rendering the 64x32 pixel monochrome display and handling user input.}
+%           \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\end{document}
